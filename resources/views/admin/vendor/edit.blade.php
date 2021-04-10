@@ -18,7 +18,7 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" action="{{route('admin.vendor.update', ['id' => $vendor->id ])}}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{route('admin.vendor.update', ['vendor' => $vendor->id ])}}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="box-body">

@@ -11,7 +11,7 @@
     <section class="content">
         <div class="row">
             <div class="col-md-6">
-                <form role="form" action="{{route('admin.product.update', ['id' => $product->id ])}}" method="post" enctype="multipart/form-data">
+                <form role="form" action="{{route('admin.product.update', ['product' => $product->id ])}}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <!-- general form elements -->
@@ -152,7 +152,7 @@
                         </div>
 
                         <div class="box-footer">
-                            <a class="btn btn-primary" href="{{ route('admin.imagedetail.show', [ 'id' => $product->id ]) }}">Chỉnh sửa chi tiết ảnh sản phẩm</a>
+                            <a class="btn btn-primary" href="{{ route('admin.imagedetail.show', [ 'imagedetail' => $product->id ]) }}">Chỉnh sửa chi tiết ảnh sản phẩm</a>
                         </div>
                     </div>
                 </div>
@@ -171,7 +171,7 @@
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <a class="btn btn-primary" href="{{ route('admin.sizeproduct.show', [ 'id' => $product->id ]) }}">Chỉnh sửa số lượng sản phẩm</a>
+                        <a class="btn btn-primary" href="{{ route('admin.sizeproduct.show', [ 'sizeproduct' => $product->id ]) }}">Chỉnh sửa số lượng sản phẩm</a>
                     </div>
 
                 </div>

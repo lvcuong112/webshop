@@ -6,6 +6,7 @@ use App\Product;
 use App\SizeProduct;
 use App\SizeProductQty;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class SizeProductController extends Controller
 {

@@ -7,6 +7,7 @@ use App\Product;
 use Faker\Provider\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class ImageDetailController extends Controller
 {

@@ -47,8 +47,8 @@
                                     <td>{{ ($item->role_id == 1) ? 'Admin' : 'Customer' }}</td>
                                     <td>{{ ($item->is_active == 1) ? 'Kích hoạt' : 'Chưa kích hoạt' }}</td>
                                     <td class="text-center">
-                                        <a href="{{route('admin.user.show', ['id'=> $item->id ])}}" class="btn btn-default">Xem</a>
-                                        <a href="{{route('admin.user.edit', ['id'=> $item->id])}}" class="btn btn-info">Sửa</a>
+                                        <a href="{{route('admin.user.show', ['user'=> $item->id ])}}" class="btn btn-default">Xem</a>
+                                        <a href="{{route('admin.user.edit', ['user'=> $item->id])}}" class="btn btn-info">Sửa</a>
                                         <!-- Thêm sự kiện onlick cho nút xóa -->
                                         <a href="javascript:void(0)" class="btn btn-danger" onclick="destroyUser({{ $item->id }})" >Xóa</a>
                                     </td>

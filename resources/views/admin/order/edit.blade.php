@@ -34,7 +34,7 @@
             <!-- left column -->
             <div class="col-md-12">
                 <div class="box box-primary">
-                    <form action="{{ route('admin.order.update', ['id' => $order->id]) }}" method="post">
+                    <form action="{{ route('admin.order.update', ['order' => $order->id]) }}" method="post">
                         @csrf
                         @method('PUT')
                         <div class="box-header with-border">
@@ -131,7 +131,7 @@
                                 <tr class="item-{{ $item->id }}"> <!-- Thêm Class Cho Dòng -->
                                     <td>{{ $key }}</td>
                                     <td>
-                                        <a href="{{route('admin.product.edit', ['id'=> $item->product_id])}}">
+                                        <a href="{{route('admin.product.edit', ['product'=> $item->product_id])}}">
                                             {{ substr($item->name, 0, 50) }}
                                         </a>
                                     </td>

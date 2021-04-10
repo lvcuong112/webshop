@@ -8,6 +8,7 @@ use App\Category; // cần thêm dòng này nếu chưa có
 use App\Product;
 use App\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class GeneralController extends Controller
 {

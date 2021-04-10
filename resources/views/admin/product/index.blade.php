@@ -54,7 +54,7 @@
                                     <td>{{ ($item->is_hot == 1) ? 'Có' : 'Không' }}</td>
                                     <td>{{ ($item->is_active == 1) ? 'Hiển thị' : 'Ẩn' }}</td>
                                     <td class="text-center">
-                                        <a href="{{route('admin.product.edit', ['id'=> $item->id])}}" class="btn btn-flat btn-info">
+                                        <a href="{{route('admin.product.edit', ['product'=> $item->id])}}" class="btn btn-flat btn-info">
                                             <i class="fa fa-edit"></i>
                                         </a>
                                         <!-- Thêm sự kiện onlick cho nút xóa -->

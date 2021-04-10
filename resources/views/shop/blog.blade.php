@@ -26,6 +26,9 @@
     <link rel="stylesheet" href="/shop/css/style.css" type="text/css">
 </head>
 <body>
+@php
+	$setting = \App\Setting::first();
+@endphp
 <!-- Page Preloder -->
 <div id="preloder">
     <div class="loader"></div>

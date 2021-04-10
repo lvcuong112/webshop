@@ -8,6 +8,7 @@ use App\Category;
 use App\Vendor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class ArticleController extends Controller
 {
@@ -53,7 +54,7 @@ class ArticleController extends Controller
 
         $article = new Article(); // khởi tạo model
         $article->title = $request->input('title');
-        $article->slug = str_slug($request->input('title'));
+        $article->slug = Str::slug($request->input('title'));
 
         // Upload file
         if ($request->hasFile('image')) { // dòng này Kiểm tra xem có image có được chọn
@@ -133,7 +134,7 @@ class ArticleController extends Controller
 
         $article = Article::findorFail($id);; // khởi tạo model
         $article->title = $request->input('title');
-        $article->slug = str_slug($request->input('title'));
+        $article->slug = Str::slug($request->input('title'));
 
         // Thay đổi ảnh
         if ($request->hasFile('new_image')) {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Banner; // nếu bạn nào chưa có cần thêm dòng này vào
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class BannerController extends Controller
 {

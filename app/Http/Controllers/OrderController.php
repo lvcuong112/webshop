@@ -7,6 +7,7 @@ use App\OrderStatus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use PhpParser\Node\Stmt\TryCatch;
+use Illuminate\Support\Str;
 
 class OrderController extends Controller
 {

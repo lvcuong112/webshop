@@ -47,8 +47,8 @@
                                     <td>{{ $item->position }}</td>
                                     <td>{{ ($item->is_active == 1) ? 'Hiển thị' : 'Ẩn' }}</td>
                                     <td class="text-center">
-                                        <a href="{{route('admin.brand.show', ['id'=> $item->id ])}}" class="btn btn-default">Xem</a>
-                                        <a href="{{route('admin.brand.edit', ['id'=> $item->id])}}" class="btn btn-info">Sửa</a>
+                                        <a href="{{route('admin.brand.show', ['brand'=> $item->id ])}}" class="btn btn-default">Xem</a>
+                                        <a href="{{route('admin.brand.edit', ['brand'=> $item->id])}}" class="btn btn-info">Sửa</a>
                                         <!-- Thêm sự kiện onlick cho nút xóa -->
                                         <a href="javascript:void(0)" class="btn btn-danger" onclick="destroyBrand({{ $item->id }})" >Xóa</a>
                                     </td>

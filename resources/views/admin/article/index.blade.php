@@ -58,7 +58,7 @@
                                     <td>{{ $item->position }}</td>
                                     <td>{{ ($item->is_active == 1) ? 'Hiển thị' : 'Ẩn' }}</td>
                                     <td class="text-center">
-                                        <a href="{{route('admin.article.edit', ['id'=> $item->id])}}" class="btn btn-flat btn-info"><i class="fa fa-edit"></i></a>
+                                        <a href="{{route('admin.article.edit', ['article'=> $item->id])}}" class="btn btn-flat btn-info"><i class="fa fa-edit"></i></a>
                                         <!-- Thêm sự kiện onlick cho nút xóa -->
                                         <a href="javascript:void(0)" class="btn btn-flat btn-danger" onclick="destroyModel('article', {{ $item->id }})" >
                                             <i class="fa fa-trash"></i>
