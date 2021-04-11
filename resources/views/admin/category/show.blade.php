@@ -27,7 +27,7 @@
                             </tr>
                             <tr>
                                 <td><b>Danh mục cha:</b></td>
-                                <td>{{ $data->parent->name or '(trống)' }}</td>
+                                <td>{{ $data->name or '(trống)' }}</td>
                             </tr>
                             <tr>
                                 <td><b>Vị trí:</b></td>

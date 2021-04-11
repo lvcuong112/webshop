@@ -60,7 +60,7 @@ class CategoryController extends Controller
         //luu vào csdl
         $category = new Category;
         $category->name = $request->input('name');
-        $category->slug = str_slug($request->input('name'));
+        $category->slug = Str::slug($request->input('name'));
         $category->parent_id = $request->input('parent_id');
 
         if ($request->hasFile('image')) {
@@ -139,7 +139,7 @@ class CategoryController extends Controller
 
         $category = Category::findorFail($id);
         $category->name = $request->input('name');
-        $category->slug = str_slug($request->input('name'));
+        $category->slug = Str::slug($request->input('name'));
         $category->parent_id = $request->input('parent_id');
         $category->is_active = $is_active;
 

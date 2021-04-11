@@ -50,7 +50,7 @@ class BannerController extends Controller
         //Khởi tạo Model và gán giá trị từ form cho những thuộc tính của đối tượng (cột trong CSDL)
         $banner = new Banner();
         $banner->title = $request->input('title');
-        $banner->slug = str_slug($request->input('title')); // slug
+        $banner->slug = Str::slug($request->input('title')); // slug
 
         if ($request->hasFile('image')) { // dòng này Kiểm tra xem có image có được chọn
             // get file
@@ -137,7 +137,7 @@ class BannerController extends Controller
         //Lấy đối tượng  và gán giá trị từ form cho những thuộc tính của đối tượng (cột trong CSDL)
         $banner = Banner::findorFail($id);
         $banner->title = $request->input('title');
-        $banner->slug = str_slug($request->input('title')); // slug
+        $banner->slug = Str::slug($request->input('title')); // slug
 
         if ($request->hasFile('new_image')) { // dòng này Kiểm tra xem có image có được chọn
             // xóa file cũ

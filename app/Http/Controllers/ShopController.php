@@ -163,7 +163,7 @@ class ShopController extends GeneralController
     public function search(Request $request)
     {
         $keyword = $request->input(' ');
-        $slug = str_slug($keyword);
+        $slug = Str::slug($keyword);
         $totalResult = 0;
 
         $products = [];
@@ -177,7 +177,7 @@ class ShopController extends GeneralController
             ['name', 'like', '%' . $keyword . '%'],
             ['is_active', '=', 1]
         ])->orWhere([
-            ['slug', 'like', '%' . str_slug($keyword) . '%'],
+            ['slug', 'like', '%' . Str::slug($keyword) . '%'],
             ['is_active', '=', 1]
         ])->orWhere([
             ['summary', 'like', '%' . $keyword . '%'],
@@ -226,8 +226,15 @@ class ShopController extends GeneralController
         if(!Auth::check()) {
             return view('shop.login');
         } else {
-            return redirect('/');
+            return redirect('/')->with(session('logout'));
         }
+    }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
     }
     public function register()
     {
@@ -318,7 +325,7 @@ class ShopController extends GeneralController
     public function shop_search(Request $request)
     {
         $keyword = $request->input('keys');
-        $slug = str_slug($keyword);
+        $slug = Str::slug($keyword);
         $totalResult = 0;
 
         $products = [];
@@ -327,7 +334,7 @@ class ShopController extends GeneralController
             ['name', 'like', '%' . $keyword . '%'],
             ['is_active', '=', 1]
         ])->orWhere([
-            ['slug', 'like', '%' . str_slug($keyword) . '%'],
+            ['slug', 'like', '%' . Str::slug($keyword) . '%'],
             ['is_active', '=', 1]
         ])->orWhere([
             ['summary', 'like', '%' . $keyword . '%'],

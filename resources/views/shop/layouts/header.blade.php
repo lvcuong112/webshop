@@ -65,10 +65,17 @@
                     </button>
                 </a>
             </div>
-            <div class="user-access">
-                <a href="register">Register</a>
-                <a href="{{ route('shop.login') }}" class="in">Login</a>
-            </div>
+            @if (session()) {
+                <div class="user-access">
+                    <a href="{{ route('shop.logout') }}" class="in">Logout</a>
+                </div>
+            } @else {
+                <div class="user-access">
+                    <a href="register">Register</a>
+                    <a href="{{ route('shop.login') }}" class="in">Login</a>
+                </div>
+            }
+            @endif
             <nav class="main-menu mobile-menu">
                 <ul>
                     <li><a class="active" href="/">Home</a></li>

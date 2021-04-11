@@ -69,7 +69,7 @@ class ProductController extends Controller
         $product = new Product(); // khởi tạo model
 
         $product->name = $request->input('name');
-        $product->slug = str_slug($request->input('name'));
+        $product->slug = Str::slug($request->input('name'));
 
         // Upload file
         if ($request->hasFile('image')) { // dòng này Kiểm tra xem có image có được chọn
@@ -208,7 +208,7 @@ class ProductController extends Controller
 
         $product = Product::findorFail($id);; // khởi tạo model
         $product->name = $request->input('name');
-        $product->slug = str_slug($request->input('name'));
+        $product->slug = Str::slug($request->input('name'));
 
         // Thay đổi ảnh
         if ($request->hasFile('new_image')) {

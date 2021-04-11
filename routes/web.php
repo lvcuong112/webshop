@@ -58,6 +58,7 @@ Route::resource('contact', 'ContactController');
 // Đăng nhập
 Route::get('/admin/login', 'AdminController@login')->name('admin.login');
 Route::get('/login', 'ShopController@login')->name('shop.login');
+Route::get('/logout', 'ShopController@logout')->name('shop.logout');
 // Đăng xuất
 Route::get('/admin/logout', 'AdminController@logout')->name('admin.logout');
 

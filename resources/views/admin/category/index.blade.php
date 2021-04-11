@@ -37,19 +37,20 @@
                             </tbody>
                             <!-- Lặp một mảng dữ liệu pass sang view để hiển thị -->
                             @foreach($data as $key => $item)
+
                                 <tr class="item-{{ $item->id }}">
                                     <td>{{ $item->name }}</td>
                                     <td>
                                         @if ($item->image)
-                                            <img src="{{asset($item->image)}}" width="50" height="50">
+                                            <img src="{{ asset($item->image) }}" width="50" height="50" alt="">
                                         @endif
                                     </td>
-                                    <td>{{ $item->parent->name or '(trống)' }}</td>
+                                    <td>{{ $item->name or '(trống)' }}</td>
                                     <td>{{ $item->position }}</td>
                                     <td>{{ $item->is_active }}</td>
                                     <td class="text-center">
-                                        <a href="{{route('admin.category.show', ['id'=> $item->id ])}}" class="btn btn-default">Xem</a>
-                                        <a href="{{route('admin.category.edit', ['id'=> $item->id])}}" class="btn btn-info">Sửa</a>
+                                        <a href="{{route('admin.category.show', ['category'=> $item->id ])}}" class="btn btn-default">Xem</a>
+                                        <a href="{{route('admin.category.edit', ['category'=> $item->id])}}" class="btn btn-info">Sửa</a>
                                         <a type="button" class="btn btn-danger" onclick="destroyCategory({{ $item->id }})" >Xóa</a>
                                     </td>
                                 </tr>
