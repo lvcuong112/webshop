@@ -220,20 +220,36 @@ class ShopController extends GeneralController
             'categories' => $categories,
         ]);
     }
-
     public function login()
     {
-        if(!Auth::check()) {
-            return view('shop.login');
-        } else {
-            return redirect('/')->with(session('logout'));
-        }
+        return view('shop.login');
     }
-    public function logout(Request $request)
+    public function postLogin(Request $request)
     {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+        $user = $request->input('email');
+        $pass = bcrypt($request->input('password'));
+
+        $checkExsit = User::Where('email', $user)->count();
+        if ($checkExsit != 0) {
+            $checkUser = User::Where('email', $user)->get();
+            foreach ($checkUser as $value) {
+                $checkPass = $value->password;
+                $role = $value->role_id;
+            }
+            if ($checkPass = $pass && $role == 2) {
+                return redirect('/')->with('msg', 'login');
+            } else {
+                return view('shop.login');
+            }
+        } else {
+            return view('shop.register');
+        }
+
+
+    }
+    public function logout()
+    {
+        session()->forget('msg');
         return redirect('/');
     }
     public function register()
@@ -275,7 +291,7 @@ class ShopController extends GeneralController
         $user->save();
 
         // chuyen dieu huong trang
-        return redirect()->route('admin.user.index');
+        return redirect()->route('shop.login');
     }
 
 

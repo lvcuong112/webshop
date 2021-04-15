@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/shop/css/login-register.css" type="text/css">
 </head>
 <body>
-    <form role="form" action="{{route('admin.postLogin')}}" method="post" class="login-form">
+    <form role="form" action="{{route('shop.postLogin')}}" method="post" class="login-form">
         @csrf
         <input type="email" class="login-username" name="email" autofocus="true" required="true" placeholder="Email" />
         <input type="password" class="login-password" name="password" required="true" placeholder="Password" />
